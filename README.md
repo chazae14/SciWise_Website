@@ -65,14 +65,3 @@ Available Scripts
 npm start — Runs the app in development mode
 
 npm run build — Creates a production build of the website
-
-Folder Structure
-SciWise_Website/
-├── src/
-│   ├── components/       # React components (cards, layout, etc.)
-│   ├── pages/            # Pages like About, Team, Annual, etc.
-│   ├── assets/           # Images, cover art, background images
-│   └── index.js / App.js # Entry point
-├── public/               # Static files, index.html
-├── package.json          # Dependencies & metadata
-└── README.md             # ← this file
