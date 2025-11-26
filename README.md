@@ -58,10 +58,23 @@ npm install    # or `yarn install`
 
 # 4. Start the development server
 npm start      # opens at http://localhost:3000
+```
 
-
-Available Scripts
+### Available Scripts
 
 npm start — Runs the app in development mode
 
 npm run build — Creates a production build of the website
+
+### Folder Structure
+``` bash
+SciWise_Website/
+├── src/
+│   ├── components/       # React components (cards, layout, etc.)
+│   ├── pages/            # Pages like About, Team, Annual, etc.
+│   ├── assets/           # Images, cover art, background images
+│   └── index.js / App.js # Entry point
+├── public/               # Static files, index.html
+├── package.json          # Dependencies & metadata
+└── README.md             # ← this file
+```
