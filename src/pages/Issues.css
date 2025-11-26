@@ -1,0 +1,25 @@
+.issue-image {
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.issue-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.issue3-image {
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.issue3-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
