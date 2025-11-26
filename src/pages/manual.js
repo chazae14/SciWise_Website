@@ -17,17 +17,12 @@ const Blogs = () => {
             <h1 style={{ marginBottom: "20px" }}>SciWISE Journal Manual</h1>
             
             {/* PDF Embed */}
-            <iframe
-                src="/sciwise_manual.pdf"
-                title="SciWISE Journal Manual"
-                width="80%"
-                height="600px"
-                style={{
-                    border: "1px solid #ccc",
-                    borderRadius: "8px",
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.2)"
-                }}
-            />
+            <iframe src="https://drive.google.com/file/d/1cyqi5idKGerWRqB2zvAShhZZo219-to4/preview" 
+            title="SciWISE Journal Manual"
+            width="640" 
+            height="480" 
+            allow="autoplay">
+            </iframe>
         </div>
     );
 };
