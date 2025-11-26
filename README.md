@@ -10,8 +10,6 @@ Welcome to the repository for SciWISE — an undergraduate‑run journal blendin
 - [Getting Started](#getting-started)  
 - [Available Scripts](#available-scripts)  
 - [Folder Structure](#folder-structure)  
-- [Contributing](#contributing)  
-- [License](#license)  
 
 ---
 
