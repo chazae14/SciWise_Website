@@ -69,7 +69,7 @@ npm run build — Creates a production build of the website
 SciWise_Website/
 ├── src/
 │   ├── components/       # React components (cards, layout, etc.)
-│   ├── pages/            # Pages like About, Team, Annual, etc.
+│   ├── pages/            # Pages like About, Issues, Submissions, etc.
 │   ├── assets/           # Images, cover art, background images
 │   └── index.js / App.js # Entry point
 ├── public/               # Static files, index.html
