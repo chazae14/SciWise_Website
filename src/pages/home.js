@@ -203,7 +203,7 @@ const About = () => {
             { label: "Instagram", href: "https://www.instagram.com/sciwise/" },
             { label: "Submissions", href: "https://journals.mcmaster.ca/sw" },
             { label: "LinkedIn", href: "https://www.linkedin.com/company/the-sciwise-journal/" },
-            { label: "Email", href: "mailto:sciwisejournal@gmail.com" },
+            { label: "Email", href: "mailto:sciwise@mcmaster.ca" },
           ].map((btn) => (
             <motion.a
               key={btn.label}
