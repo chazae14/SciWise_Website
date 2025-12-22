@@ -1,166 +1,237 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import bknd from "../bkrd.png";
-import issue3 from "../issue3.png";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+import bknd from "../bkrd1.png";       // TOP
+import issueBg from "../middle6.png"; // FEATURED ISSUE BG
+import aboutBg from "../bottom5.png"; // ABOUT + TEAM BG
+import contact from "../contact.png"; // CONTACT
+import issue5 from "../issue5.png";
+
+/* ================= FADE FROM WHITE ================= */
+const fadeFromWhite = {
+  hidden: { opacity: 1 },
+  show: {
+    opacity: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
 };
 
-const About = () => {
-  const [isIssueHovered, setIsIssueHovered] = useState(false);
-  const [isButtonHovered, setIsButtonHovered] = useState(false);
-
-  return (
-    <motion.div
-      initial="hidden"
-      animate="show"
-      style={{
-        width: "100%",
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        textAlign: "center",
-        paddingTop: "40px",
-      }}
-    >
-      {/* --- Background Section --- */}
+/* ================= SECTION ================= */
+const Section = ({ bg, children, animateOnScroll = true }) => (
+  <motion.div
+    style={{
+      width: "100%",
+      height: "100vh",
+      backgroundImage: `url(${bg})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      position: "relative",
+      overflow: "hidden",
+    }}
+  >
+    {animateOnScroll && (
       <motion.div
-        variants={fadeUp}
+        variants={fadeFromWhite}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
         style={{
-          width: "100%",
-          padding: "280px 20px",
-          marginTop: "0",
-          backgroundImage: `url(${bknd})`,
-          backgroundSize: "contain",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          position: "absolute",
+          inset: 0,
+          backgroundColor: "white",
+          zIndex: 1,
         }}
-      ></motion.div>
+      />
+    )}
 
-      {/* --- Latest Issue Section --- */}
-      <motion.div variants={fadeUp} style={{ textAlign: "center", marginBottom: "40px", width: "100%" }}>
-        <motion.div
-          onMouseEnter={() => setIsIssueHovered(true)}
-          onMouseLeave={() => setIsIssueHovered(false)}
+    <div style={{ position: "relative", zIndex: 2 }}>
+      {children}
+    </div>
+  </motion.div>
+);
+
+/* ================= PAGE ================= */
+const About = () => {
+  return (
+    <div style={{ width: "100%", overflowX: "hidden", backgroundColor: "white" }}>
+
+      {/* ================= TOP ================= */}
+      <Section bg={bknd} animateOnScroll={false} />
+
+      {/* ================= FEATURED ISSUE ================= */}
+      <Section bg={issueBg}>
+        <div
           style={{
-            backgroundColor: "#f4f4f4",
-            borderRadius: "12px",
-            padding: "20px",
-            maxWidth: "600px",
-            margin: "0 auto",
-            boxShadow: isIssueHovered
-              ? "0 12px 30px rgba(0,0,0,0.3)"
-              : "0 8px 20px rgba(0,0,0,0.2)",
-            transform: isIssueHovered
-              ? "translateY(-10px) scale(1.05)"
-              : "translateY(0) scale(1)",
-            transition: "all 0.3s ease",
-            cursor: "pointer",
             display: "flex",
-            flexDirection: "column",
+            flexWrap: "wrap",
             alignItems: "center",
+            justifyContent: "center",
+            gap: "60px",
+            maxWidth: "1100px",
+            padding: "40px",
+            textAlign: "center",
           }}
         >
-          <h2
+          <a
+            href="https://heyzine.com/flip-book/eedf66a455.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <motion.img
+              src={issue5}
+              alt="SciWISE Issue 5"
+              whileHover={{
+                y: -6,
+                scale: 1.04,
+                boxShadow: "0 20px 40px rgba(0,0,0,0.35)",
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              style={{ width: "260px", cursor: "pointer" }}
+            />
+          </a>
+
+          <div style={{ maxWidth: "420px", color: "#111" }}>
+            <h2 style={{ fontSize: "2.2rem", fontWeight: 700 }}>
+              Featured Issue
+            </h2>
+            <h3 style={{ marginBottom: "16px" }}>
+              Issue 5 (Dec 2025)
+            </h3>
+            <p style={{ lineHeight: 1.6 }}>
+              This issue explores the human side of science — from medical
+              innovation and community research to art, poetry, interviews,
+              and short features celebrating curiosity across disciplines.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* ================= ABOUT + MEET THE TEAM ================= */}
+      <Section bg={aboutBg}>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.25 } },
+          }}
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "80px",
+            maxWidth: "1200px",
+            padding: "40px",
+            textAlign: "center",
+          }}
+        >
+          {/* TEXT */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              show: { opacity: 1, y: 0 },
+            }}
             style={{
-              fontSize: "2rem",
-              marginBottom: "15px",
-              color: "#1a3b75",
+              maxWidth: "520px",
+              fontSize: "1.05rem",
+              lineHeight: 1.7,
+              color: "#222",
             }}
           >
-            Featured Issue
-          </h2>
-          <motion.a
-            href="https://heyzine.com/flip-book/464803b2d1.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.25 }}
-            style={{ width: "100%", textDecoration: "none" }}
+            <p>
+              <strong>SciWISE</strong> is an undergraduate journal from
+              McMaster University that explores the intersection of science
+              and art. We provide a platform for diverse creative and
+              scientific works, including poems, comics, stories, articles,
+              interviews, and research manuscripts. By blending analytical
+              rigor with empathetic storytelling, we aim to humanize science
+              and foster engaging science communication.
+            </p>
+          </motion.div>
+
+          {/* GRADIENT BLOB BUTTON */}
+          <motion.button
+            variants={{
+              hidden: { opacity: 0, scale: 0.7 },
+              show: { opacity: 1, scale: 1 },
+            }}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => (window.location.href = "/team")}
+            style={{
+              width: "190px",
+              height: "190px",
+              borderRadius: "50% 60% 55% 45%",
+              background:
+                "radial-gradient(circle at top left, #e63946, #9b1c31)",
+              color: "white",
+              fontSize: "1.4rem",
+              fontWeight: 600,
+              border: "none",
+              cursor: "pointer",
+              boxShadow: "0 20px 45px rgba(0,0,0,0.35)",
+            }}
           >
-            <img
-              src={issue3}
-              alt="Latest Issue"
-              style={{
-                width: "100%",
-                height: "auto",
-                borderRadius: "8px",
-                display: "block",
-              }}
-            />
-          </motion.a>
+            Meet the
+            <br />
+            team
+          </motion.button>
         </motion.div>
-      </motion.div>
+      </Section>
 
-      {/* Divider */}
-      <motion.hr
-        variants={fadeUp}
-        style={{ width: "80%", margin: "40px 0", borderColor: "#ccc" }}
-      />
-
-      {/* --- About Us Section on a Card --- */}
-      <motion.div
-        variants={fadeUp}
-        style={{
-          backgroundColor: "#eaeff6ff",
-          borderRadius: "30px 30px 0 0",          
-          padding: "30px 20px",
-          maxWidth: "700px",
-          margin: "0 auto 40px auto",
-          boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <p
+      {/* ================= CONTACT ================= */}
+      <Section bg={contact}>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={{ show: { transition: { staggerChildren: 0.12 } } }}
           style={{
-            fontSize: "1.2rem",
-            marginBottom: "20px",
-            textAlign: "center",
-            lineHeight: 1.5,
+            display: "flex",
+            gap: "22px",
+            flexWrap: "wrap",
+            justifyContent: "center",
           }}
         >
-          SciWise is an undergraduate journal from McMaster University that
-          explores the intersection of science and art. We provide a platform
-          for diverse creative and scientific works, including poems, comics,
-          stories, articles, interviews, and research manuscripts. By blending
-          analytical rigor with empathetic storytelling, we aim to humanize
-          science and foster engaging science communication.
-        </p>
+          {[
+            { label: "Instagram", href: "https://www.instagram.com/sciwise/" },
+            { label: "Submissions", href: "https://journals.mcmaster.ca/sw" },
+            { label: "LinkedIn", href: "https://www.linkedin.com/company/the-sciwise-journal/" },
+            { label: "Email", href: "mailto:sciwisejournal@gmail.com" },
+          ].map((btn) => (
+            <motion.a
+              key={btn.label}
+              href={btn.href}
+              target="_blank"
+              rel="noreferrer"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0 },
+              }}
+              whileHover={{ y: -6, scale: 1.05 }}
+              style={{
+                padding: "14px 30px",
+                borderRadius: "999px",
+                background: "white",
+                color: "#000",
+                fontWeight: 600,
+                textDecoration: "none",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
+              }}
+            >
+              {btn.label}
+            </motion.a>
+          ))}
+        </motion.div>
+      </Section>
 
-        {/* Button with independent hover */}
-        <motion.a
-          href="/team"
-          onMouseEnter={() => setIsButtonHovered(true)}
-          onMouseLeave={() => setIsButtonHovered(false)}
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.2 }}
-          style={{
-            padding: "12px 24px",
-            fontSize: "1rem",
-            backgroundColor: isButtonHovered ? "#163061" : "#1a3b75",
-            color: "#fff",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-            textDecoration: "none",
-            boxShadow: isButtonHovered
-              ? "0 4px 12px rgba(0,0,0,0.3)"
-              : "0 2px 6px rgba(0,0,0,0.2)",
-            transition: "all 0.2s ease",
-          }}
-        >
-          Meet the Team
-        </motion.a>
-      </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

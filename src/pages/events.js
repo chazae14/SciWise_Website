@@ -6,6 +6,7 @@ import issue1 from "../issue1.png";
 import issue2 from "../issue2.png";
 import issue3 from "../issue3.png";
 import issue4 from "../issue4.png";
+import issue5 from "../issue5.png";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 30 },
@@ -66,15 +67,15 @@ const Events = () => {
                 }}
             >
                 <motion.a
-                    href="https://heyzine.com/flip-book/464803b2d1.html"
+                    href="https://heyzine.com/flip-book/eedf66a455.html"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.25 }}
                 >
                     <img
-                        src={issue3}
-                        alt="Issue 3"
+                        src={issue5}
+                        alt="Issue 5"
                         className="issue3-image"
                         style={{ maxWidth: "300px", borderRadius: "8px" }}
                     />
@@ -87,7 +88,7 @@ const Events = () => {
                     </h1>
                     <h2 style={{ 
                         marginBottom: "10px" }}>
-                        Issue 3 (May 2025)
+                        Issue 5 (December 2025)
                     </h2>
                     <p style={{ fontSize: "1rem", lineHeight: "1.5" }}>
                         This issue explores the human side of science—from medical innovation and
@@ -107,6 +108,7 @@ const Events = () => {
                     marginBottom: "40px",
                 }}
             >
+
                 {/* ISSUE 4 */}
                 <motion.div variants={fadeUp} whileHover={{ y: -5 }}>
                     <a
@@ -124,6 +126,26 @@ const Events = () => {
                     </a>
                     <h3 style={{ marginTop: "10px" }}>
                         Issue 4 (July 2025)
+                    </h3>
+                </motion.div>
+                
+                {/* ISSUE 3 */}
+                <motion.div variants={fadeUp} whileHover={{ y: -5 }}>
+                    <a
+                        href="https://heyzine.com/flip-book/464803b2d1.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <motion.img
+                            src={issue3}
+                            alt="Issue 3"
+                            className="issue-image"
+                            whileHover={{ scale: 1.03 }}
+                            transition={{ duration: 0.25 }}
+                        />
+                    </a>
+                    <h3 style={{ marginTop: "10px" }}>
+                        Issue 3 (May 2025)
                     </h3>
                 </motion.div>
 
@@ -147,7 +169,7 @@ const Events = () => {
                     </h3>
                 </motion.div>
 
-                {/* ISSUE 1 EXAMPLE (if needed) */}
+                {/* ISSUE 1 */}
                 <motion.div variants={fadeUp} whileHover={{ y: -5 }}>
                     <a
                         href="https://journals.mcmaster.ca/sw/issue/view/177/101"
