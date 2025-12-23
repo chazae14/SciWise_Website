@@ -214,19 +214,30 @@ const About = () => {
                 hidden: { opacity: 0, y: 20 },
                 show: { opacity: 1, y: 0 },
               }}
-              whileHover={{ y: -6, scale: 1.05 }}
+              whileHover={{
+                y: -6,
+                scale: 1.06,
+                borderRadius: "55% 45% 60% 40%",
+              }}
+              transition={{ type: "spring", stiffness: 250, damping: 18 }}
               style={{
-                padding: "14px 30px",
-                borderRadius: "999px",
-                background: "white",
-                color: "#000",
+                padding: "18px 34px",
+                borderRadius: "60% 40% 55% 45%",
+                background:
+                  "radial-gradient(circle at top left, #ffffff, #f2f2f2)",
+                color: "#111",
                 fontWeight: 600,
                 textDecoration: "none",
-                boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
+                boxShadow: "0 14px 30px rgba(0,0,0,0.25)",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                minWidth: "150px",
               }}
             >
               {btn.label}
             </motion.a>
+
           ))}
         </motion.div>
       </Section>
