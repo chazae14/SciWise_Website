@@ -222,10 +222,10 @@ const About = () => {
               transition={{ type: "spring", stiffness: 250, damping: 18 }}
               style={{
                 padding: "18px 34px",
-                borderRadius: "60% 40% 55% 45%",
+                borderRadius: "50% 60% 55% 45%",
                 background:
-                  "radial-gradient(circle at top left, #ffffff, #f2f2f2)",
-                color: "#111",
+                "radial-gradient(circle at top left, #e63946, #9b1c31)",
+                color: "#ffffff",
                 fontWeight: 600,
                 textDecoration: "none",
                 boxShadow: "0 14px 30px rgba(0,0,0,0.25)",
