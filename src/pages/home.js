@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import bknd from "../bkrd1.png";       // TOP
 import issueBg from "../middle6.png"; // FEATURED ISSUE BG
 import aboutBg from "../bottom5.png"; // ABOUT + TEAM BG
-import contact from "../contact.png"; // CONTACT
+import contact from "../contact1.png"; // CONTACT
 import issue5 from "../issue5.png";
 
 /* ================= FADE FROM WHITE ================= */
