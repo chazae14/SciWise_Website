@@ -97,7 +97,7 @@ export const MobileMenu = styled.div`
     width: 220px;
     height: 100%;
     background-color: #1a3b75;
-    padding-top: 40px; 
+    padding-top: 120px; 
     transition: right 0.3s ease-in-out;
     z-index: 11;
 
