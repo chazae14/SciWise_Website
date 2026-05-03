@@ -7,6 +7,7 @@ import issue2 from "../issue2.png";
 import issue3 from "../issue3.png";
 import issue4 from "../issue4.png";
 import issue5 from "../issue5.png";
+import issue6 from "../issue6.png";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 30 },
@@ -67,15 +68,15 @@ const Events = () => {
                 }}
             >
                 <motion.a
-                    href="https://heyzine.com/flip-book/eedf66a455.html"
+                    href="https://heyzine.com/flip-book/282f221950.html"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.25 }}
                 >
                     <img
-                        src={issue5}
-                        alt="Issue 5"
+                        src={issue6}
+                        alt="Issue 6"
                         className="issue3-image"
                         style={{ maxWidth: "300px", borderRadius: "8px" }}
                     />
@@ -88,12 +89,14 @@ const Events = () => {
                     </h1>
                     <h2 style={{ 
                         marginBottom: "10px" }}>
-                        Issue 5 (December 2025)
+                        Issue 6 (April 2026)
                     </h2>
                     <p style={{ fontSize: "1rem", lineHeight: "1.5" }}>
-                        This issue explores the human side of science—from medical innovation and
-                        community research to art, poetry, interviews, and short features that
-                        celebrate curiosity and discovery across disciplines.
+                        This SciWISE issue explores how science evolves alongside human experience, highlighting themes of 
+                        adaptation across climate, history, health, and identity. It blends diverse format to examine change 
+                        from both scientific and personal perspectives. Topics range from ancient parasites and volcanic eruptions 
+                        to Alzheimer’s, anxiety, and innovations in COVID-19 DNA sensors. Overall, the issue presents science 
+                        as something dynamic and deeply connected to how we live and understand the world.
                     </p>
                 </div>
             </motion.div>
@@ -109,6 +112,25 @@ const Events = () => {
                 }}
             >
 
+                {/* ISSUE 5 */}
+                <motion.div variants={fadeUp} whileHover={{ y: -5 }}>
+                    <a
+                        href="https://heyzine.com/flip-book/eedf66a455.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <motion.img
+                            src={issue5}
+                            alt="Issue 5"
+                            className="issue-image"
+                            whileHover={{ scale: 1.03 }}
+                            transition={{ duration: 0.25 }}
+                        />
+                    </a>
+                    <h3 style={{ marginTop: "10px" }}>
+                        Issue 5 (December 2025)
+                    </h3>
+                </motion.div>
                 {/* ISSUE 4 */}
                 <motion.div variants={fadeUp} whileHover={{ y: -5 }}>
                     <a

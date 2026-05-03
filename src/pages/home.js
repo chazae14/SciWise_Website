@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import bknd from "../bkrd1.png";       // TOP
-import issueBg from "../middle6.png"; // FEATURED ISSUE BG
-import aboutBg from "../bottom5.png"; // ABOUT + TEAM BG
-import contact from "../contact1.png"; // CONTACT
-import issue5 from "../issue5.png";
+import bknd from "../bkrd2.png";       // TOP
+import issueBg from "../middle7.png"; // FEATURED ISSUE BG
+import aboutBg from "../bottom6.png"; // ABOUT + TEAM BG
+import contact from "../contact2.png"; // CONTACT
+import issue6 from "../issue6.png";
 
 /* ================= FADE FROM WHITE ================= */
 const fadeFromWhite = {
@@ -82,8 +82,8 @@ const About = () => {
             rel="noreferrer"
           >
             <motion.img
-              src={issue5}
-              alt="SciWISE Issue 5"
+              src={issue6}
+              alt="SciWISE Issue 6"
               whileHover={{
                 y: -6,
                 scale: 1.04,
@@ -99,12 +99,13 @@ const About = () => {
               Featured Issue
             </h2>
             <h3 style={{ marginBottom: "16px" }}>
-              Issue 5 (Dec 2025)
+              Issue 6 (April 2026)
             </h3>
             <p style={{ lineHeight: 1.6 }}>
-              This issue explores the human side of science — from medical
-              innovation and community research to art, poetry, interviews,
-              and short features celebrating curiosity across disciplines.
+              This SciWISE issue explores how science evolves alongside human experience, highlighting themes of 
+              adaptation across climate, history, health, and identity. It blends diverse format to examine change 
+              from both scientific and personal perspectives, and presents science 
+              as something dynamic and deeply connected to how we live and understand the world.
             </p>
           </div>
         </div>
@@ -161,7 +162,7 @@ const About = () => {
               hidden: { opacity: 0, scale: 0.7 },
               show: { opacity: 1, scale: 1 },
             }}
-            whileHover={{ scale: 1.08 }}
+            whileHover={{ scale: 1.08, rotate: 1.5 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => (window.location.href = "/team")}
             style={{
@@ -169,13 +170,16 @@ const About = () => {
               height: "190px",
               borderRadius: "50% 60% 55% 45%",
               background:
-                "radial-gradient(circle at top left, #e63946, #9b1c31)",
+                "radial-gradient(circle at top left, #c97b63, #e6b7c1, #e6b7c1)",
               color: "white",
               fontSize: "1.4rem",
               fontWeight: 600,
               border: "none",
               cursor: "pointer",
-              boxShadow: "0 20px 45px rgba(0,0,0,0.35)",
+              boxShadow: `
+                inset 0 2px 6px rgba(255,255,255,0.25),
+                 0 12px 25px rgba(0,0,0,0.25)
+              `
             }}
           >
             Meet the
@@ -217,6 +221,7 @@ const About = () => {
               whileHover={{
                 y: -6,
                 scale: 1.06,
+                rotate: 1.5,
                 borderRadius: "55% 45% 60% 40%",
               }}
               transition={{ type: "spring", stiffness: 250, damping: 18 }}
@@ -224,8 +229,8 @@ const About = () => {
                 padding: "18px 34px",
                 borderRadius: "50% 60% 55% 45%",
                 background:
-                "radial-gradient(circle at top left, #e63946, #9b1c31)",
-                color: "#ffffff",
+                  "radial-gradient(circle at top left, #6b8f71, #7c9a92)",
+                color: "#fff8f2",
                 fontWeight: 600,
                 textDecoration: "none",
                 boxShadow: "0 14px 30px rgba(0,0,0,0.25)",
